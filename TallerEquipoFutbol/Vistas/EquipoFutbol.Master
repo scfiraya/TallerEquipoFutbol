@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="EquipoFutbol.master.cs" Inherits="TallerEquipoFutbol.Vistas.EquipoFutbol" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="text/html; charset=utf-8" />
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/Style.css" rel="stylesheet" />
+    <title>TallerEquipoFutbol</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header>
+            <div class="container">
+                <img src="../Imagen/header1.jpg" id="logo"/>
+            </div>
+        </header>
+        <div class="container">
+            <section class="row">
+                <aside class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <ul class="nav nav-pills-stacked">
+                        <li role="presentation"><a href="Ejercicio1.aspx">Ejercicio 1</a></li>
+                        <li role="presentation"><a href="Ejercicio2.aspx">Ejercicio 2</a></li>
+                    </ul>
+                </aside>
+                <article class="col-xs-12 col-sm-12 col-md-8 col-lg-8   ">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </article>
+            </section>
+        </div>
+        <footer>
+            <div class="container">
+                <h4>Autor: SENA _ ADSI _ 901541</h4>
+                <h5>Todos Los Derechos Reservados @MJ-SF</h5>
+            </div>
+        </footer>
+    </form>
+    <script src="../Scripts/bootstrap.js"></script>
+    <script src="../Scripts/jquery-2.2.1.js"></script>
+</body>
+</html>

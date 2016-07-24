@@ -1,0 +1,4 @@
+C:\Users\USUARIO\documents\visual studio 2012\Projects\TallerEquipoFutbol\TallerEquipoFutbolDal\bin\Debug\TallerEquipoFutbolDal.dll
+C:\Users\USUARIO\documents\visual studio 2012\Projects\TallerEquipoFutbol\TallerEquipoFutbolDal\bin\Debug\TallerEquipoFutbolDal.pdb
+C:\Users\USUARIO\documents\visual studio 2012\Projects\TallerEquipoFutbol\TallerEquipoFutbolDal\obj\Debug\TallerEquipoFutbolDal.dll
+C:\Users\USUARIO\documents\visual studio 2012\Projects\TallerEquipoFutbol\TallerEquipoFutbolDal\obj\Debug\TallerEquipoFutbolDal.pdb
