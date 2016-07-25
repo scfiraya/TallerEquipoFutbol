@@ -140,43 +140,44 @@ namespace TallerEquipoFutbol.Vistas
             strbldr.Append("\n");
             for (int j = 0; j < gvJugadores.Rows.Count; j++)
             {
-                for (int k = 0; k < gvJugadores.Columns.Count; k++)
+                for (int i = 0; i < gvJugadores.Columns.Count; i++)
                 {
                     //separating gridview columns with comma
-                    strbldr.Append(gvJugadores.Rows[j].Cells[k].Text + ',');
+                    strbldr.Append(gvJugadores.Rows[j].Cells[i].Text + ',');
                 }
                 //appending new line for gridview rows
                 strbldr.Append("\n");
             }
-            Response.Write(strbldr.ToString());
+            Response.Output.Write(strbldr.ToString());
+            Response.Flush();
             Response.End();
         }
 
-        protected void btnExportarPdf_Click(object sender, EventArgs e)
-        {
-            ExportToPdf("Informe.pdf", gvJugadores);
-        }
+        //protected void btnExportarPdf_Click(object sender, EventArgs e)
+        //{
+        //    ExportToPdf("Informe.pdf", gvJugadores);
+        //}
 
-        private void ExportToPdf(string nameReport, GridView wControl)
-        {
-            Response.ContentType = "application / pdf";
-            Response.AddHeader("Content-Disposition", "apego; nombre de archivo = Informe.pdf");
-            Response.ContentEncoding = Encoding.UTF8;
-            gvJugadores.AllowPaging = false;
-            gvJugadores.DataBind();
-            Response.Cache.SetCacheability(HttpCacheability.NoCache);
-            StringWriter sw = new StringWriter();
-            HtmlTextWriter hw = new HtmlTextWriter(sw);
-            gvJugadores.RenderControl(hw);
-            StringReader sr = new StringReader(sw.ToString());
-            Document PDFDoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
-            HTMLWorker HTMLParser = new HTMLWorker(PDFDoc);
-            PdfWriter.GetInstance(PDFDoc, Response.OutputStream);
-            PDFDoc.Open();
-            HTMLParser.Parse(sr);
-            PDFDoc.Close();
-            Response.Write(PDFDoc);
-            Response.End();
-        }
+        //private void ExportToPdf(string nameReport, GridView wControl)
+        //{
+        //    Response.ContentType = "application / pdf";
+        //    Response.AddHeader("Content-Disposition", "apego; nombre de archivo = Informe.pdf");
+        //    Response.ContentEncoding = Encoding.UTF8;
+        //    gvJugadores.AllowPaging = false;
+        //    gvJugadores.DataBind();
+        //    Response.Cache.SetCacheability(HttpCacheability.NoCache);
+        //    StringWriter sw = new StringWriter();
+        //    HtmlTextWriter hw = new HtmlTextWriter(sw);
+        //    gvJugadores.RenderControl(hw);
+        //    StringReader sr = new StringReader(sw.ToString());
+        //    Document PDFDoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
+        //    HTMLWorker HTMLParser = new HTMLWorker(PDFDoc);
+        //    PdfWriter.GetInstance(PDFDoc, Response.OutputStream);
+        //    PDFDoc.Open();
+        //    HTMLParser.Parse(sr);
+        //    PDFDoc.Close();
+        //    Response.Write(PDFDoc);
+        //    Response.End();
+        //}
     }
 }
