@@ -152,9 +152,13 @@ namespace TallerEquipoFutbol.Vistas
             Response.End();
         }
 
-        protected void btnPdf_Click(object sender, EventArgs e)
+        protected void btnExportarPdf_Click(object sender, EventArgs e)
         {
+            ExportToPdf("Informe.pdf", gvJugadores);
+        }
 
+        private void ExportToPdf(string nameReport, GridView wControl)
+        {
             Response.ContentType = "application / pdf";
             Response.AddHeader("Content-Disposition", "apego; nombre de archivo = Informe.pdf");
             Response.ContentEncoding = Encoding.UTF8;

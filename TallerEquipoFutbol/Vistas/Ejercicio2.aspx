@@ -42,7 +42,7 @@
             <asp:Button ID="btnExportarTxt" runat="server" Text="Exportar TXT" CssClass="btn btn-primary" OnClick="btnExportarTxt_Click"/>
             <asp:Button ID="btnExportarHtml" runat="server" Text="Exportar HTML" CssClass="btn btn-primary" OnClick="btnExportarHtml_Click" />
             <asp:Button ID="btnExportarCvs" runat="server" Text="Exportar CVS" CssClass="btn btn-primary" OnClick="btnExportarCvs_Click"/>
-            <asp:Button ID="btnPdf" runat="server" Text="Exportar PDF" CssClass="btn btn-primary" OnClick="btnPdf_Click"/>
+            <asp:Button ID="btnExportarPdf" runat="server" Text="Exportar PDF" CssClass="btn btn-primary" OnClick="btnExportarPdf_Click"/>
         </div>
 
         <div class="form-group">
