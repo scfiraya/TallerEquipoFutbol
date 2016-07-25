@@ -9,6 +9,13 @@ using TallerEquipoFutbolBll;
 using System.IO;
 using System.Web.UI.HtmlControls;
 using System.Text;
+using iTextSharp.text; //Pdf
+using iTextSharp.text.pdf; //Pdf
+using iTextSharp.text.html; //Pdf
+using iTextSharp.text.html.simpleparser; //Pdf
+using System.Xml;
+using System.Collections;
+using System.Net;
 
 namespace TallerEquipoFutbol.Vistas
 {
@@ -18,7 +25,6 @@ namespace TallerEquipoFutbol.Vistas
         {
 
         }
-
         protected void btnVer_Click(object sender, EventArgs e)
         {
             EquipoFutbolBll objVer = new EquipoFutbolBll();
@@ -30,7 +36,7 @@ namespace TallerEquipoFutbol.Vistas
             gvJugadores.DataBind();
         }
 
-        protected void btnExportar_Click(object sender, EventArgs e)
+        protected void btnExportarExcel_Click(object sender, EventArgs e)
         {
             ExportToExcel("Informe.xls", gvJugadores);
         }
@@ -55,9 +61,33 @@ namespace TallerEquipoFutbol.Vistas
             response.End();
         }
 
-        protected void btnExportarPdf_Click(object sender, EventArgs e)
+        protected void btnExportarHtml_Click(object sender, EventArgs e)
         {
+            ExportToHtml("Informe.html", gvJugadores);
+        }
 
+        private void ExportToHtml(string nameReport, GridView wControl)
+        {
+            HttpResponse response = Response;
+            StringWriter sw = new StringWriter();
+            HtmlTextWriter htw = new HtmlTextWriter(sw);
+            Page pageToRender = new Page();
+            HtmlForm form = new HtmlForm();
+            form.Controls.Add(wControl);
+            pageToRender.Controls.Add(form);
+            response.Clear();
+            response.Buffer = true;
+            response.ContentType = "text/text";
+            response.AddHeader("Content-Disposition", "attachment;filename=" + nameReport);
+            response.Charset = "UTF-8";
+            response.ContentEncoding = Encoding.Default;
+            pageToRender.RenderControl(htw);
+            response.Write(sw.ToString());
+            response.End();
+        }
+
+        protected void btnExportarPdf_Click1(object sender, EventArgs e)
+        {
             ExportToPDF("Informe.pdf", gvJugadores);
         }
 
@@ -81,18 +111,12 @@ namespace TallerEquipoFutbol.Vistas
             response.End();
         }
 
-        protected void btnExportarHtml_Click(object sender, EventArgs e)
-        {
-
-        }
-
         protected void btnExportarPlain_Click(object sender, EventArgs e)
         {
-
-            ExportToPlain("Informe.", gvJugadores);
+            ExportToPlain("Informe.cvs", gvJugadores);
         }
 
-        private void ExportToPDF(string nameReport, GridView wControl)
+        private void ExportToPlain(string nameReport, GridView wControl)
         {
             HttpResponse response = Response;
             StringWriter sw = new StringWriter();
@@ -103,7 +127,7 @@ namespace TallerEquipoFutbol.Vistas
             pageToRender.Controls.Add(form);
             response.Clear();
             response.Buffer = true;
-            response.ContentType = "application/pdf";
+            response.ContentType = "text/cvs";
             response.AddHeader("Content-Disposition", "attachment;filename=" + nameReport);
             response.Charset = "UTF-8";
             response.ContentEncoding = Encoding.Default;

@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <h1>Crear, Modificar o Eliminar Usuario</h1>
+    <h1>Exportar Datos</h1>
 
     <br />
     <br />
@@ -21,17 +21,9 @@
 
         <div class="text-center">
             <asp:Button ID="btnVer" runat="server" Text="Ver" CssClass="btn btn-primary" OnClick="btnVer_Click" />
-            <asp:Button ID="btnExportarExcel" runat="server" Text="Exportar Excel" CssClass="btn btn-primary" OnClick="btnExportar_Click" />
-            <asp:Button ID="btnExportarPdf" runat="server" Text="Exportar PDF" CssClass="btn btn-primary" OnClick="btnExportarPdf_Click" />
-            <asp:Button ID="btnExportarHtml" runat="server" Text="Exportar HTML" CssClass="btn btn-primary" OnClick="btnExportarHtml_Click" />
-            <asp:Button ID="btnExportarPlain" runat="server" Text="Exportar CVS" CssClass="btn btn-primary" OnClick="btnExportarPlain_Click" />
         </div>
 
         <div class="form-group">
-            <asp:Label ID="lblValidacion" runat="server" Text=""></asp:Label>
-        </div>
-
-         <div class="form-group">
             <asp:GridView ID="gvJugadores" runat="server" AutoGenerateColumns="false" RowStyle-HorizontalAlign="Justify">
                 <Columns>
                     <asp:BoundField HeaderText="Número de Documento" DataField="Nit" HeaderStyle-HorizontalAlign="Justify" />
@@ -45,5 +37,17 @@
             </asp:GridView>
         </div>
 
+        <div class="text-center">
+            <asp:Button ID="btnExportarExcel" runat="server" Text="Exportar Excel" CssClass="btn btn-primary" OnClick="btnExportarExcel_Click" />
+            <asp:Button ID="btnExportarPdf" runat="server" Text="Exportar PDF" CssClass="btn btn-primary" OnClick="btnExportarPdf_Click1"/>
+            <asp:Button ID="btnExportarHtml" runat="server" Text="Exportar HTML" CssClass="btn btn-primary" OnClick="btnExportarHtml_Click" />
+            <asp:Button ID="btnExportarPlain" runat="server" Text="Exportar CVS" CssClass="btn btn-primary" OnClick="btnExportarPlain_Click"/>
         </div>
+
+        <div class="form-group">
+            <asp:Label ID="lblValidacion" runat="server" Text=""></asp:Label>
+        </div>
+
+    </div>
+
 </asp:Content>

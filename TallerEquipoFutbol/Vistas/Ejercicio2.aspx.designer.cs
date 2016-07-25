@@ -58,6 +58,15 @@ namespace TallerEquipoFutbol.Vistas {
         protected global::System.Web.UI.WebControls.Button btnVer;
         
         /// <summary>
+        /// Control gvJugadores.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvJugadores;
+        
+        /// <summary>
         /// Control btnExportarExcel.
         /// </summary>
         /// <remarks>
@@ -101,14 +110,5 @@ namespace TallerEquipoFutbol.Vistas {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblValidacion;
-        
-        /// <summary>
-        /// Control gvJugadores.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvJugadores;
     }
 }
