@@ -36,7 +36,7 @@ namespace TallerEquipoFutbol.Vistas
             gvJugadores.DataBind();
         }
 
-        protected void btnExportarExcel_Click(object sender, EventArgs e)
+        protected void btnExportarXls_Click(object sender, EventArgs e)
         {
             ExportToExcel("Informe.xls", gvJugadores);
         }
@@ -59,6 +59,37 @@ namespace TallerEquipoFutbol.Vistas
             pageToRender.RenderControl(htw);
             response.Write(sw.ToString());
             response.End();
+        }
+
+        protected void btnExportarTxt_Click(object sender, EventArgs e)
+        {
+            ExportToTxt("Informe.txt", gvJugadores);
+        }
+
+        private void ExportToTxt(string nameReport, GridView wControl)
+        {
+            Response.ClearContent();
+            Response.AddHeader("Content-Disposition", string.Format("attachment; filename = {0}", "Informe.txt"));
+            Response.ContentType = "application/texto";
+            Response.ContentEncoding = Encoding.UTF8;
+            gvJugadores.AllowPaging = false;
+            gvJugadores.DataBind();
+            StringBuilder strbldr = new StringBuilder();
+            for (int i = 0; i < gvJugadores.Columns.Count; i++)
+            {
+                strbldr.Append(gvJugadores.Columns[i].HeaderText + ',');
+            }
+            strbldr.Append("\n");
+            for (int j = 0; j < gvJugadores.Rows.Count; j++)
+            {
+                for (int k = 0; k < gvJugadores.Columns.Count; k++)
+                {
+                    strbldr.Append(gvJugadores.Rows[j].Cells[k].Text + ',');
+                }
+                strbldr.Append("\n");
+            }
+            Response.Write(strbldr.ToString());
+            Response.End();
         }
 
         protected void btnExportarHtml_Click(object sender, EventArgs e)
@@ -86,36 +117,16 @@ namespace TallerEquipoFutbol.Vistas
             response.End();
         }
 
-        protected void btnExportarPdf_Click1(object sender, EventArgs e)
+        protected void btnExportarCvs_Click(object sender, EventArgs e)
         {
-            ExportToPDF("Informe.pdf", gvJugadores);
+            ExportToCvs("Informe.cvs", gvJugadores);
         }
 
-        private void ExportToPDF(string nameReport, GridView wControl)
-        {
-            HttpResponse response = Response;
-            StringWriter sw = new StringWriter();
-            HtmlTextWriter htw = new HtmlTextWriter(sw);
-            Page pageToRender = new Page();
-            HtmlForm form = new HtmlForm();
-            form.Controls.Add(wControl);
-            pageToRender.Controls.Add(form);
-            response.Clear();
-            response.Buffer = true;
-            response.ContentType = "application/pdf";
-            response.AddHeader("Content-Disposition", "attachment;filename=" + nameReport);
-            response.Charset = "UTF-8";
-            response.ContentEncoding = Encoding.Default;
-            pageToRender.RenderControl(htw);
-            response.Write(sw.ToString());
-            response.End();
-        }
-
-        protected void btnExportarPlain_Click(object sender, EventArgs e)
+        private void ExportToCvs(string nameReport, GridView wControl)
         {
             Response.ClearContent();
             Response.AddHeader("content-disposition", string.Format("attachment; filename={0}", "Informe.csv"));
-            Response.ContentType = "text/csv";
+            Response.ContentType = "application/cvs.ms-excel";
             Response.ContentEncoding = Encoding.UTF8;
             gvJugadores.AllowPaging = false;
             gvJugadores.DataBind();
@@ -138,6 +149,29 @@ namespace TallerEquipoFutbol.Vistas
                 strbldr.Append("\n");
             }
             Response.Write(strbldr.ToString());
+            Response.End();
+        }
+
+        protected void btnPdf_Click(object sender, EventArgs e)
+        {
+
+            Response.ContentType = "application / pdf";
+            Response.AddHeader("Content-Disposition", "apego; nombre de archivo = Informe.pdf");
+            Response.ContentEncoding = Encoding.UTF8;
+            gvJugadores.AllowPaging = false;
+            gvJugadores.DataBind();
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            StringWriter sw = new StringWriter();
+            HtmlTextWriter hw = new HtmlTextWriter(sw);
+            gvJugadores.RenderControl(hw);
+            StringReader sr = new StringReader(sw.ToString());
+            Document PDFDoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
+            HTMLWorker HTMLParser = new HTMLWorker(PDFDoc);
+            PdfWriter.GetInstance(PDFDoc, Response.OutputStream);
+            PDFDoc.Open();
+            HTMLParser.Parse(sr);
+            PDFDoc.Close();
+            Response.Write(PDFDoc);
             Response.End();
         }
     }

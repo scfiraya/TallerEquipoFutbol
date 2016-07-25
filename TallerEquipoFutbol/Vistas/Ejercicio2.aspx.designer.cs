@@ -67,22 +67,22 @@ namespace TallerEquipoFutbol.Vistas {
         protected global::System.Web.UI.WebControls.GridView gvJugadores;
         
         /// <summary>
-        /// Control btnExportarExcel.
+        /// Control btnExportarXls.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnExportarExcel;
+        protected global::System.Web.UI.WebControls.Button btnExportarXls;
         
         /// <summary>
-        /// Control btnExportarPdf.
+        /// Control btnExportarTxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnExportarPdf;
+        protected global::System.Web.UI.WebControls.Button btnExportarTxt;
         
         /// <summary>
         /// Control btnExportarHtml.
@@ -94,13 +94,22 @@ namespace TallerEquipoFutbol.Vistas {
         protected global::System.Web.UI.WebControls.Button btnExportarHtml;
         
         /// <summary>
-        /// Control btnExportarPlain.
+        /// Control btnExportarCvs.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnExportarPlain;
+        protected global::System.Web.UI.WebControls.Button btnExportarCvs;
+        
+        /// <summary>
+        /// Control btnPdf.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPdf;
         
         /// <summary>
         /// Control lblValidacion.

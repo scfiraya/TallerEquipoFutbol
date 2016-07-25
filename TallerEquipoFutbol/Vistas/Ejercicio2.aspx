@@ -38,10 +38,11 @@
         </div>
 
         <div class="text-center">
-            <asp:Button ID="btnExportarExcel" runat="server" Text="Exportar Excel" CssClass="btn btn-primary" OnClick="btnExportarExcel_Click" />
-            <asp:Button ID="btnExportarPdf" runat="server" Text="Exportar PDF" CssClass="btn btn-primary" OnClick="btnExportarPdf_Click1"/>
+            <asp:Button ID="btnExportarXls" runat="server" Text="Exportar XLS" CssClass="btn btn-primary" OnClick="btnExportarXls_Click" />
+            <asp:Button ID="btnExportarTxt" runat="server" Text="Exportar TXT" CssClass="btn btn-primary" OnClick="btnExportarTxt_Click"/>
             <asp:Button ID="btnExportarHtml" runat="server" Text="Exportar HTML" CssClass="btn btn-primary" OnClick="btnExportarHtml_Click" />
-            <asp:Button ID="btnExportarPlain" runat="server" Text="Exportar CVS" CssClass="btn btn-primary" OnClick="btnExportarPlain_Click"/>
+            <asp:Button ID="btnExportarCvs" runat="server" Text="Exportar CVS" CssClass="btn btn-primary" OnClick="btnExportarCvs_Click"/>
+            <asp:Button ID="btnPdf" runat="server" Text="Exportar PDF" CssClass="btn btn-primary" OnClick="btnPdf_Click"/>
         </div>
 
         <div class="form-group">
