@@ -6,3 +6,8 @@ C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\expo\TallerEquipoFutbol\T
 C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\expo\TallerEquipoFutbol\TallerEquipoFutbol\TallerEquipoFutbolDal\bin\Debug\TallerEquipoFutbolDal.pdb
 C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\expo\TallerEquipoFutbol\TallerEquipoFutbol\TallerEquipoFutbolDal\obj\Debug\TallerEquipoFutbolDal.dll
 C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\expo\TallerEquipoFutbol\TallerEquipoFutbol\TallerEquipoFutbolDal\obj\Debug\TallerEquipoFutbolDal.pdb
+C:\Users\cindy\Documents\Visual Studio 2012\Projects\TallerEquipoFutbol\TallerEquipoFutbolDal\bin\Debug\TallerEquipoFutbolDal.dll
+C:\Users\cindy\Documents\Visual Studio 2012\Projects\TallerEquipoFutbol\TallerEquipoFutbolDal\bin\Debug\TallerEquipoFutbolDal.pdb
+C:\Users\cindy\Documents\Visual Studio 2012\Projects\TallerEquipoFutbol\TallerEquipoFutbolDal\obj\Debug\TallerEquipoFutbolDal.csprojResolveAssemblyReference.cache
+C:\Users\cindy\Documents\Visual Studio 2012\Projects\TallerEquipoFutbol\TallerEquipoFutbolDal\obj\Debug\TallerEquipoFutbolDal.dll
+C:\Users\cindy\Documents\Visual Studio 2012\Projects\TallerEquipoFutbol\TallerEquipoFutbolDal\obj\Debug\TallerEquipoFutbolDal.pdb

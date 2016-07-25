@@ -15,6 +15,22 @@ namespace TallerEquipoFutbol.Vistas
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (!IsPostBack)
+            {
+                EquipoFutbolBll objMostrarDatos = new EquipoFutbolBll();
+                DataTable dtJugadores = new DataTable();
+
+
+
+                //Llenar DropDownList con el DataTable
+                ddlEquipo.DataSource = dtJugadores;
+
+                ddlEquipo.DataTextField = "Nombre";
+                ddlEquipo.DataValueField = "Idequipo";
+
+                ddlEquipo.DataBind();
+            }
+
         }
 
         protected void btnVer_Click(object sender, EventArgs e)

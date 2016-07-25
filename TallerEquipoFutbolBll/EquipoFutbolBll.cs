@@ -38,5 +38,13 @@ namespace TallerEquipoFutbolBll
             dtVer = objVer.VerJugadoresDal(Consulta);
             return dtVer;
         }
+
+        public DataTable MostrarDatosBll(string Consulta)
+        {
+            EquipoFutbolDal objMostrar = new EquipoFutbolDal();
+            DataTable dtMostrar = new DataTable();
+            dtMostrar = objMostrar.MostrarDatosDal(Consulta);
+            return dtMostrar;
+        }
     }
 }

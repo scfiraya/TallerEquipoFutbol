@@ -61,7 +61,7 @@ namespace TallerEquipoFutbolDal
         {
             string sql = "";
 
-            sql = "select * from Jugadores";
+            sql = "select * from Jugadores where Nit=" + Consulta;
 
 
             DataTable dtVer = new DataTable();
@@ -75,6 +75,22 @@ namespace TallerEquipoFutbolDal
             Connection.Close();
             dtVer = dsVer.Tables[0];
             return dtVer;
+        }
+        public DataTable MostrarDatosDal(string consulta)
+        {
+            string sql = "";
+            sql = "select E.Nombre as Nombre,Idequipo  from EquipoFutbol E inner join Jugadores J on Idequipo2=Idequipo where Idequipo=" + consulta;
+            DataTable dtmostrar = new DataTable();
+            DataSet dsmostrar = new DataSet();
+            SqlConnection Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conexion"].ConnectionString);
+            Connection.Open();
+            IDbCommand Comando = Connection.CreateCommand();
+            Comando.CommandText = sql;
+            SqlDataAdapter Adaptador = new SqlDataAdapter((SqlCommand)Comando);
+            Adaptador.Fill(dsmostrar);
+            Connection.Close();
+            dtmostrar = dsmostrar.Tables[0];
+            return dtmostrar;
         }
     }
 }
