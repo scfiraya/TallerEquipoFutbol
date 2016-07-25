@@ -113,27 +113,32 @@ namespace TallerEquipoFutbol.Vistas
 
         protected void btnExportarPlain_Click(object sender, EventArgs e)
         {
-            ExportToPlain("Informe.cvs", gvJugadores);
-        }
-
-        private void ExportToPlain(string nameReport, GridView wControl)
-        {
-            HttpResponse response = Response;
-            StringWriter sw = new StringWriter();
-            HtmlTextWriter htw = new HtmlTextWriter(sw);
-            Page pageToRender = new Page();
-            HtmlForm form = new HtmlForm();
-            form.Controls.Add(wControl);
-            pageToRender.Controls.Add(form);
-            response.Clear();
-            response.Buffer = true;
-            response.ContentType = "text/cvs";
-            response.AddHeader("Content-Disposition", "attachment;filename=" + nameReport);
-            response.Charset = "UTF-8";
-            response.ContentEncoding = Encoding.Default;
-            pageToRender.RenderControl(htw);
-            response.Write(sw.ToString());
-            response.End();
+            Response.ClearContent();
+            Response.AddHeader("content-disposition", string.Format("attachment; filename={0}", "Informe.csv"));
+            Response.ContentType = "text/csv";
+            Response.ContentEncoding = Encoding.UTF8;
+            gvJugadores.AllowPaging = false;
+            gvJugadores.DataBind();
+            StringBuilder strbldr = new StringBuilder();
+            for (int i = 0; i < gvJugadores.Columns.Count; i++)
+            {
+                //separting header columns text with comma operator
+                strbldr.Append(gvJugadores.Columns[i].HeaderText + ',');
+            }
+            //appending new line for gridview header row
+            strbldr.Append("\n");
+            for (int j = 0; j < gvJugadores.Rows.Count; j++)
+            {
+                for (int k = 0; k < gvJugadores.Columns.Count; k++)
+                {
+                    //separating gridview columns with comma
+                    strbldr.Append(gvJugadores.Rows[j].Cells[k].Text + ',');
+                }
+                //appending new line for gridview rows
+                strbldr.Append("\n");
+            }
+            Response.Write(strbldr.ToString());
+            Response.End();
         }
     }
 }

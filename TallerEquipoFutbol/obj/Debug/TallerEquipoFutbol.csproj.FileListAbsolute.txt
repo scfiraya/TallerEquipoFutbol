@@ -21,3 +21,4 @@ C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\expo\TallerEquipoFutbol\T
 C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\expo\TallerEquipoFutbol\TallerEquipoFutbol\TallerEquipoFutbol\bin\TallerEquipoFutbolDal.dll
 C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\expo\TallerEquipoFutbol\TallerEquipoFutbol\TallerEquipoFutbol\bin\TallerEquipoFutbolBll.pdb
 C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\expo\TallerEquipoFutbol\TallerEquipoFutbol\TallerEquipoFutbol\bin\TallerEquipoFutbolDal.pdb
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\expo\TallerEquipoFutbol\TallerEquipoFutbol\TallerEquipoFutbol\bin\itextsharp.dll
